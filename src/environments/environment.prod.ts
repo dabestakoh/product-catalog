@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  mockApiHost: `${window.location.protocol}//${window.location.origin}:3000`
 };
