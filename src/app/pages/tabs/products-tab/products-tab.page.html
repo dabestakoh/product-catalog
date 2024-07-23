@@ -36,16 +36,21 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
+      <ion-col *ngIf="!filteredProducts.length && !error" class="ion-text-center">
+        <div>
+          No results found based on your search.
+        </div>
+      </ion-col>
     </ion-row>
     <ion-row *ngIf="!products.length && !error">
-      <ion-col>
+      <ion-col class="ion-text-center">
         <div>
           No products available.
         </div>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="error">
-      <ion-col>
+      <ion-col class="ion-text-center">
         <div class="error">{{ error }}</div>
       </ion-col>
     </ion-row>
