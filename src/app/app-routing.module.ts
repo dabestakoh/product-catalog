@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ProductDetailGuard } from './guards/product-detail-guard';
 
 const routes: Routes = [
   {
@@ -8,7 +9,13 @@ const routes: Routes = [
   },
   {
     path: 'product-detail',
-    loadChildren: () => import('./pages/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
+    loadChildren: () => import('./pages/product-detail/product-detail.module').then(m => m.ProductDetailPageModule),
+    canActivate: [ProductDetailGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'tabs/home',
+    pathMatch: 'full'
   }
 ];
 @NgModule({
@@ -17,4 +24,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

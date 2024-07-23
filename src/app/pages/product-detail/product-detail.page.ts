@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Product } from 'src/app/interfaces/product';
-import { environment as env }  from 'src/environments/environment';
+import { environment as env } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,16 +11,16 @@ import { environment as env }  from 'src/environments/environment';
 })
 export class ProductDetailPage implements OnInit {
   product: Product | undefined;
-  environment = env; 
+  environment = env;
   constructor(
-    private router: Router) { }
+    private router: Router,
+    private navCtrl: NavController) { }
 
   ngOnInit() {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras.state && navigation.extras.state['product']) {
       this.product = navigation.extras.state['product'];
     } else {
-      // Handle the case where the product is not available (e.g., navigate back to the product list)
       this.router.navigate(['/products']);
     }
   }
@@ -31,4 +32,7 @@ export class ProductDetailPage implements OnInit {
     return product.price;
   }
 
+  navigateToProducts() {
+    this.navCtrl.navigateBack('tabs/products')
+  }
 }

@@ -1,5 +1,7 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons><ion-icon name="arrow-back-outline" size="large" (click)="navigateToProducts()"></ion-icon></ion-buttons>
+    
     <ion-title>Product Detail</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,6 +13,7 @@
     </ion-card-header>
     <ion-card-content>
       <img [src]="product.imageSrc ? product.imageSrc : environment.defaultImage" alt="Product Image" />
+      <br /> <br />
       <p>{{ product.description }}</p>
       <br />
       <p *ngIf="product.discount > 0">

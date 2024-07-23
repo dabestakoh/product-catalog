@@ -10,6 +10,8 @@ import { environment as env }  from 'src/environments/environment';
 })
 export class ProductsTabPage implements OnInit {
   products: Product[] = [];
+  filteredProducts: Product[] = [];
+  searchInput: string = '';
   error: string | null = null;
   environment = env; 
   constructor(private productService: ProductService, private router: Router) { }
@@ -21,12 +23,20 @@ export class ProductsTabPage implements OnInit {
   getProducts(): void {
     this.productService.getProducts().subscribe(
       (products: Product[]) => {
-        this.products = products;
+        this.filteredProducts = this.products = products;
       },
       (error: any) => {
         console.error('Error fetching products:', error);
         this.error = 'Error fetching products. Please try again later.';
       }
+    );
+  }
+
+  filterProducts() {
+    const term = this.searchInput.toLowerCase();
+    this.filteredProducts = this.products.filter(product =>
+      product.name.toLowerCase().includes(term) ||
+      product.description.toLowerCase().includes(term)
     );
   }
 

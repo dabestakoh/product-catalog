@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Product Catalog</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +12,11 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-searchbar [(ngModel)]="searchInput" (ionInput)="filterProducts()"></ion-searchbar>
   <ion-grid>
     <ion-row *ngIf="products.length">
       <ion-col class="ion-text-center" size-xs="6" size-sm="6" size-md="4" size-lg="4" size-xl="2"
-        *ngFor="let product of products">
+        *ngFor="let product of filteredProducts">
         <ion-card (click)="viewProductDetail(product)">
           <ion-card-header>
             <ion-card-title>
