@@ -13,7 +13,9 @@ export class ProductsTabPage implements OnInit {
   filteredProducts: Product[] = [];
   searchInput: string = '';
   error: string | null = null;
-  environment = env; 
+  environment = env;
+  isLoading: boolean = true;
+
   constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
@@ -24,10 +26,12 @@ export class ProductsTabPage implements OnInit {
     this.productService.getProducts().subscribe(
       (products: Product[]) => {
         this.filteredProducts = this.products = products;
+        this.isLoading = false;
       },
       (error: any) => {
-        console.error('Error fetching products:', error);
-        this.error = 'Error fetching products. Please try again later.';
+        console.error('Error fetching from products API:', error);
+        this.error = 'Something went wrong. Please try again later.';
+        this.isLoading = false;
       }
     );
   }

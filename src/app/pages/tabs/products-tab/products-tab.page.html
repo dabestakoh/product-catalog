@@ -12,7 +12,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-searchbar [(ngModel)]="searchInput" (ionInput)="filterProducts()"></ion-searchbar>
+  <ion-grid class="ion-padding-top" *ngIf="isLoading">
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-spinner name="crescent" size="large"></ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-searchbar *ngIf="!isLoading && !error" [(ngModel)]="searchInput" (ionInput)="filterProducts()"></ion-searchbar>
   <ion-grid>
     <ion-row *ngIf="products.length">
       <ion-col class="ion-text-center" size-xs="6" size-sm="6" size-md="4" size-lg="4" size-xl="2"
@@ -42,14 +50,17 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="!products.length && !error">
+    <ion-row *ngIf="!products.length && !isLoading && !error">
       <ion-col class="ion-text-center">
         <div>
           No products available.
         </div>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="error">
+  </ion-grid>
+
+  <ion-grid class="ion-padding-top" *ngIf="error && !isLoading">
+    <ion-row>
       <ion-col class="ion-text-center">
         <div class="error">{{ error }}</div>
       </ion-col>
