@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="product">
+    <ion-card-header>
+      <ion-card-title>{{ product.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="product.imageSrc ? product.imageSrc : environment.defaultImage" alt="Product Image" />
+      <p>{{ product.description }}</p>
+      <br />
+      <p *ngIf="product.discount > 0">
+        Discounted Price: {{ calculateDiscountedPrice(product) | currency }}
+      </p>
+      <p *ngIf="product.discount === 0">
+        Price: {{ product.price | currency }}
+      </p>
+      <p *ngIf="product.discount > 0">
+        Original Price: <span class="original-price">{{ product.price | currency }}</span>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

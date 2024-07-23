@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>products-tab</ion-title>
+    <ion-title>Product Catalog</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,29 +11,41 @@
     </ion-toolbar>
   </ion-header>
 
-  <div *ngIf="error" class="error">{{ error }}</div>
-
-  <ion-list>
-    <ion-card *ngFor="let product of products">
-      <ion-card-header>
-        <ion-card-title>{{ product.name }}</ion-card-title>
-        <ion-card-subtitle>
-          <ng-container *ngIf="product.discount > 0">
-            <span class="original-price">{{ product.price | currency }} </span>
-            <span class="discounted-price">{{ calculateDiscountedPrice(product) | currency }}</span>
-          </ng-container>
-          <ng-container *ngIf="product.discount === 0">
-            {{ product.price | currency }}
-          </ng-container>
-        </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        {{ product.description }}
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
-
-  <div *ngIf="!products.length && !error">
-    No products available.
-  </div>
+  <ion-grid>
+    <ion-row *ngIf="products.length">
+      <ion-col class="ion-text-center" size-xs="6" size-sm="6" size-md="4" size-lg="4" size-xl="2"
+        *ngFor="let product of products">
+        <ion-card (click)="viewProductDetail(product)">
+          <ion-card-header>
+            <ion-card-title>
+              <img [src]="product.imageSrc ? product.imageSrc : environment.defaultImage" alt="Product Image" />
+            </ion-card-title>
+            <ion-card-subtitle></ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <span class="product-name">{{ product.name }}</span>
+            <ng-container *ngIf="product.discount > 0">
+                <span class="original-price">{{ product.price | currency }}  </span>
+                <span class="discounted-price">{{ calculateDiscountedPrice(product) | currency }}</span>
+            </ng-container>
+            <ng-container *ngIf="product.discount === 0">
+              <span class="price">{{ product.price | currency }}  </span>
+            </ng-container>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!products.length && !error">
+      <ion-col>
+        <div>
+          No products available.
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="error">
+      <ion-col>
+        <div class="error">{{ error }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

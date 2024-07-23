@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
-
+import { environment as env }  from 'src/environments/environment';
 @Component({
   selector: 'app-products-tab',
   templateUrl: './products-tab.page.html',
@@ -10,8 +11,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductsTabPage implements OnInit {
   products: Product[] = [];
   error: string | null = null;
-
-  constructor(private productService: ProductService) { }
+  environment = env; 
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
     this.getProducts();
@@ -34,5 +35,9 @@ export class ProductsTabPage implements OnInit {
       return product.price - (product.price * (product.discount / 100));
     }
     return product.price;
+  }
+
+  viewProductDetail(product: Product){
+    this.router.navigate(['/product-detail'], { state: { product } });
   }
 }

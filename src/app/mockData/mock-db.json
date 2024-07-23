@@ -2,16 +2,76 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "price": 100,
-      "description": "Description for Product 1",
+      "name": "Chord Mojo 2",
+      "price": 650,
+      "description": "The Chord Mojo 2 is the most advanced DAC/headphone amplifier in the world. It plays your favorite music with class-leading detail and clarity, right up to studio-grade levels. The Mojo 2 builds upon the original Mojo by Rob Watts and makes some substantial improvements in the overall functionality of the portable DAC. The new Mojo retains a lot of what made the Mojo 1 popular: dual headphone jacks, amazing build quality, control spheres, great battery life, and a soundstage and tone that few could compete with. The Chord Electronics Mojo 2 adds additional functionality, including enhanced tone controls, a revamped menu system, high-end sound specs, and low and high gain volume control. The Mojo 2 is the perfect portable DAC amp for almost every headphone and IEM on the market.",
+      "imageSrc": "https://chordelectronics.co.uk/wp-content/uploads/2021/04/Mojo-2-render-2-3.png",
       "discount": 10
     },
     {
       "id": 2,
-      "name": "Product 2",
+      "name": "iFi Micro iDSD Signature",
+      "price": 649,
+      "description": "Sporting a Space Blue finish and powered by a built-in rechargeable battery, the micro iDSD Signature is a transportable DAC/headphone amp that’s ready for anything that the universe throws at it. Battery power means it’s ultra-clean with ultra-stable DC power and avoids the pitfalls of AC mains – dips, spike and noise-inducing RFI/EMI pollution. And with up to 12 hours playing time, depending on the headphones and performance mode engaged, it feels like you could take it to the moon and back.",
+      "imageSrc": "https://m.media-amazon.com/images/I/81q-NYnEkoL.jpg",
+      "discount": 0
+    },
+    {
+      "id": 3,
+      "name": "THIEAUDIO Oracle MKIII",
+      "price": 589,
+      "description": "The Oracle and Oracle MKII were THIEAUDIO’s interpretation of budget tri-brid studio monitors. They were aimed to provide the most professional studio monitor tunings and technical resolutions at the most affordable price. Since then, THIEAUDIOhas made several technological innovations that we are excited to introduce back into the Oracle series. The bass drivers have been updated to bring a stronger sub-bass presence. The tuning has also been modified to reflect customer feedback from the past 2 years and deliver a more natural and engaging listening session. ",
+      "imageSrc": "https://www.thieaudio.com/cdn/shop/files/IMG_9334.jpg?v=1720676365&width=1946",
+      "discount": 0
+    },
+    {
+      "id": 4,
+      "name": "ONIX Alpha XI1 Dual CS43198 Portable USB DAC/AMP",
+      "price": 109,
+      "description": "Pair of top-of-the-line Cirrus Logic CS43198 DACs provide exquisitely clean sound, while still providing our unique sound tuning. Running in a fully balanced setup, feeding two dedicated SGM8262 headphone amplifiers, offering up to 500 mW @ 32 Ohm output power. Making ONIX XI1 into a truly powerful tiny beast, driving anything from sensitive IEMs to demanding full-size Planars.",
+      "imageSrc": "https://shenzhenaudio.com/cdn/shop/files/2_52e70035-9590-478d-aca4-5ff2a6043a52.png?v=1717660074&width=1946",
+      "discount": 0
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
       "price": 150,
-      "description": "Description for Product 2",
+      "description": "Description for Product 5",
+      "discount": 0
+    },
+    {
+      "id": 6,
+      "name": "Product 6",
+      "price": 150,
+      "description": "Description for Product 6",
+      "discount": 0
+    },
+    {
+      "id": 7,
+      "name": "Product 7",
+      "price": 150,
+      "description": "Description for Product 7",
+      "discount": 0
+    },
+    {
+      "id": 8,
+      "name": "Product 8",
+      "price": 150,
+      "description": "Description for Product 8",
+      "discount": 0
+    },
+    {
+      "id": 9,
+      "name": "Product 9",
+      "price": 150,
+      "description": "Description for Product 9",
+      "discount": 0
+    },
+    {
+      "id": 10,
+      "name": "Product 10",
+      "price": 150,
+      "description": "Description for Product 10",
       "discount": 0
     }
   ]
