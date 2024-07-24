@@ -11,6 +11,10 @@ import { AppState } from '../enums/app-state';
 export class ProductDetailGuard implements CanActivate {
   constructor(private router: Router) { }
 
+/**
+ * Route guard to avoid navigating to product-detail if there is no state and navigates it back to products page
+ * 
+ */
   canActivate(route: ActivatedRouteSnapshot):
     Observable<boolean> | Promise<boolean> | boolean {
     const navigation = this.router.getCurrentNavigation();

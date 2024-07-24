@@ -1,3 +1,7 @@
+/**
+ * Constants file for Products Tab Page which contains all the texts that are displayed on the page
+ * 
+ */
 export class ProductsTabConstants {
     public static TITLE_TEXT = "Product Catalog";
     public static NO_SEARCH_RESULTS = "No results found based on your search.";

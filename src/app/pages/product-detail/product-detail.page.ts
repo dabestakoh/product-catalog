@@ -25,6 +25,8 @@ export class ProductDetailPage implements OnInit {
 
   ngOnInit() {
     const navigation = this.router.getCurrentNavigation();
+
+    // gets the state and assign to product: Product object
     if (navigation?.extras.state && navigation.extras.state[AppState.PRODUCT]) {
       this.product = navigation.extras.state[AppState.PRODUCT];
     } else {
@@ -32,10 +34,12 @@ export class ProductDetailPage implements OnInit {
     }
   }
 
+  // calculates discounted price from priceUtil and returns it to display
   calculateDiscountedPrice(product: Product): number {
     return this.priceUtil.calculateDiscountedPrice(product);
   }
 
+  // navigate back using the chevron icon to products page
   navigateToProducts() {
     this.navCtrl.navigateBack(AppRoutes.PRODUCTS);
   }

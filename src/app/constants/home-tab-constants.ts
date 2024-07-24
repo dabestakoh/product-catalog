@@ -1,3 +1,7 @@
+/**
+ * Constants file for Home Tab Page which contains all the texts that are displayed on the page
+ * 
+ */
 export class HomeTabConstants {
     public static TITLE_TEXT = "Lown-Fi Home";
     public static CARD_HEADER = "Find Your Perfect Portable Audio Companion";

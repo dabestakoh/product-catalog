@@ -13,8 +13,15 @@ export class ProductService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
+  /**
+   * Retrieves a list of products from mock API call.
+   * 
+   * @returns {Observable<Product[]>} as Observable
+   *
+   * @throws {HttpErrorResponse} as Error Reponse
+   */
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsUrl);
   }

@@ -28,9 +28,11 @@ export class ProductsTabPage implements OnInit {
     private priceUtil: PriceUtil) { }
 
   ngOnInit() {
+    // get the products list on load
     this.getProducts();
   }
 
+  // call the products API to get the products, display an error if there is any error in the reponse
   getProducts(): void {
     this.productService.getProducts().subscribe(
       (products: Product[]) => {
@@ -44,6 +46,7 @@ export class ProductsTabPage implements OnInit {
     );
   }
 
+  // filters the current products array to display updated product list based on search input
   filterProducts() {
     const term = this.searchInput.toLowerCase();
     this.filteredProducts = this.products.filter(product =>
@@ -52,6 +55,7 @@ export class ProductsTabPage implements OnInit {
     );
   }
 
+  // sorts the product list by productSortType
   sortProducts() {
     switch (this.sortOrder) {
       case this.productSortType.PRICEASC:
@@ -71,10 +75,12 @@ export class ProductsTabPage implements OnInit {
     }
   }
 
+  // calculates discounted price from priceUtil and returns it to display
   calculateDiscountedPrice(product: Product): number {
     return this.priceUtil.calculateDiscountedPrice(product);
   }
 
+  // navaigates to product detail page and passes the state of the current product clicked
   viewProductDetail(product: Product) {
     this.router.navigate(['/product-detail'], { state: { product } });
   }
