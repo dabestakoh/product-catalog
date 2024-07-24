@@ -50,8 +50,7 @@ export class ProductsTabPage implements OnInit {
   filterProducts() {
     const term = this.searchInput.toLowerCase();
     this.filteredProducts = this.products.filter(product =>
-      product.name.toLowerCase().includes(term) ||
-      product.description.toLowerCase().includes(term)
+      product.name.toLowerCase().includes(term)
     );
   }
 

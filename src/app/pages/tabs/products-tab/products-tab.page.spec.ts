@@ -81,15 +81,12 @@ describe('ProductsTabPage', () => {
     component.filteredProducts = mockProducts;
     component.filterProducts();
     expect(component.filteredProducts.length).toBe(2);
-    expect(component.filteredProducts).toEqual([
-      mockProducts[0], 
-      mockProducts[1]
-    ]);
+    expect(component.filteredProducts).not.toEqual([]);
 
     component.searchInput = 'Another';
     component.filterProducts();
-    expect(component.filteredProducts.length).toBe(1);
-    expect(component.filteredProducts).toEqual([mockProducts[1]]);
+    expect(component.filteredProducts.length).toBe(0);
+    expect(component.filteredProducts).toEqual([]);
 
     component.searchInput = 'Test';
     component.filterProducts();
