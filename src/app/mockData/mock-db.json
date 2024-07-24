@@ -6,7 +6,7 @@
       "price": 650,
       "description": "The Chord Mojo 2 is the most advanced DAC/headphone amplifier in the world. It plays your favorite music with class-leading detail and clarity, right up to studio-grade levels. The Mojo 2 builds upon the original Mojo by Rob Watts and makes some substantial improvements in the overall functionality of the portable DAC. The new Mojo retains a lot of what made the Mojo 1 popular: dual headphone jacks, amazing build quality, control spheres, great battery life, and a soundstage and tone that few could compete with. The Chord Electronics Mojo 2 adds additional functionality, including enhanced tone controls, a revamped menu system, high-end sound specs, and low and high gain volume control. The Mojo 2 is the perfect portable DAC amp for almost every headphone and IEM on the market.",
       "imageSrc": "https://chordelectronics.co.uk/wp-content/uploads/2021/04/Mojo-2-render-2-3.png",
-      "discount": 10
+      "discount": 5
     },
     {
       "id": 2,
@@ -34,45 +34,51 @@
     },
     {
       "id": 5,
-      "name": "Product 5",
-      "price": 150,
-      "description": "Description for Product 5",
-      "discount": 0
+      "name": "HiBy R3 II",
+      "price": 179,
+      "description": "<h2>Dual ES9219C DAC Chips</h2> <br /> Experience audio perfection with the incorporation of not one, but two high-quality ESS ES9219C audio System-on-Chips (SoCs). Within each ES9219C lies a dual-channel architecture, boasting exceptional DAC and amplifier components for each channel. This meticulous design achieves outstanding audio quality and grants precise control over your audio output. Furthermore, the utilization of two ES9219C chips enables the creation of a fully balanced output, setting the stage for a remarkable audio experience. These chips seamlessly blend high fidelity, minimal noise, robust power output, and efficient power consumption. Together, they form the rock-solid foundation of your Hi-Res audio source component, ensuring that your music is rendered with utmost clarity and fidelity.",
+      "imageSrc": "https://store.hiby.com/cdn/shop/files/HiBy-R3-II-Entry-level-HiFi-Audio-Player-Music-Player-with-HiByOS-HiBy-_-Make-Music-More-Musical-62459130.png?v=1710733896&width=950",
+      "discount": 10
     },
     {
       "id": 6,
-      "name": "Product 6",
+      "name": "7HZ Timeless",
       "price": 150,
-      "description": "Description for Product 6",
+      "description": "<h2>14.2mm Planar Driver</h2> </br />7HZ Timeless is truly living up to its name with its ultra-thin diaphragm and lightweight body. Everything feels nothing but everything. Time is within reach here. Selected 14.2mm planar driver and unique structure provide fast response, excellent dynamic range and frequency characteristics",
+      "imageSrc": "https://www.linsoul.com/cdn/shop/products/7HZTimeless-2_3d709844-2bea-4125-938e-61febf3e320f.jpg?v=1635258287&width=1946",
       "discount": 0
     },
     {
       "id": 7,
-      "name": "Product 7",
-      "price": 150,
-      "description": "Description for Product 7",
+      "name": "HarmonicDyne Zeus",
+      "price": 125,
+      "description": "<h2>50mm Beryllium Dynamic Drivers</h2> <br />Engineered for Acoustic Accuracy. Equipped with a new and innovative custom 50mm Beryllium diaphragm dynamic driver, the Zeus offers an extreme frequency response of 10Hz to 40kHz. Going beyond the audible range of the human ear, the dynamic range of the Zeus ensures you will never miss any details of any song.<br /><br /><h2>Ultra-High Resolution Audio</h2> <br />Music You can Reach Out and Touch. We wanted to present a sound that was both accurate, and musical. We tuned the bass to be very precise yet deep enough to leave a satisfying rumble. The speed of the bass allows our transparent mids to shine through for those smooth vocals. The trebles shimmer like crystals and presents a detailed, while enjoyable, listen<br /><br /><h2>The Perfect Fit - Optimum Comfort for Hours of Listening Pleasure</h2> <br />Designed with the highest-quality materials for the metal headband and sandwiched with several layers of resonant dampening polymers, you’re ensured with a secure fit and cloud-like comfort. The lightweight and softbuild design means your long listening sessions will be pleasurable - without the pressure.<br /><br /><h2>Ergonomic Ear Pads - Comfort meets HiFi</h2> <br />The innovative and ergonomically designed ear pads are crafted of high quality nano velvet cushions, an ultra-lightweight and ultra-comfortable material that makes for a comfortable wear. Its geometric inner membrane design ensures a perfect seal for those tight basslines, while permitting airflow so your ears don’t get too stuffy.<br /><br /><h2>Custom OCC Cables.</h2> <br />We chose to use ultra-high purity copper wires for our cable to enhance the rich mids and punchy bassline. The balanced cable also means you can benefit from the extra voltage of your desired digital source.",
+      "imageSrc": "https://www.linsoul.com/cdn/shop/products/Earphone-Zeus11-5-1000x1000.jpg?v=1625450989&width=1946",
       "discount": 0
     },
     {
       "id": 8,
-      "name": "Product 8",
-      "price": 150,
-      "description": "Description for Product 8",
+      "name": "TANGZU Wan'er S.G",
+      "price": 19,
+      "description": "<h2>HIFI 10MM DYNAMIC DRIVER PET DIAPHRAGM IN EAR EARPHONE</h2><br /> <br />10mm Dynamic Driver, Remarkable Performance<br />Dual Cavity Chamber, Fine Tuning<br />Durable&Reliable 0.78mm 2Pin 5N OFC Cable<br />Ergonomic Shape, Comfortable Fit<br />",
+      "imageSrc": "https://www.linsoul.com/cdn/shop/products/IMG_2266.jpg?v=1667878218&width=1946",
       "discount": 0
     },
     {
       "id": 9,
-      "name": "Product 9",
-      "price": 150,
-      "description": "Description for Product 9",
+      "name": "iFi ZEN DAC 3",
+      "price": 229,
+      "description": "<h2>Fresh New Look. Unleash Every Music Detail.</h2><br /><br />The ZEN DAC 3 serves as your gateway to the world of high-resolution music, offering support for sample rates of up to 768kHz. This future-proof feature ensures full compatibility with all music formats available on streaming platforms, bringing you the best in sound quality.<br /><br /><h2>Equipped with a built-in headphone amplifier and the versatility to function both as a DAC and a DAC/Pre, this all-encompassing device is the only piece of equipment you’ll need on your desk. It seamlessly connects to headphones, preamplifiers, integrated amplifiers, or active speakers, offering a comprehensive audio solution for home and office.<br /><br /><h2>Refined to Perfection.</h2><br /><br />The acclaimed ZEN DAC series has garnered numerous awards, including being named WHAT Hi-Fi?’s Best DAC under £200 for four consecutive years.<br /><br />The ZEN DAC 3 continues its legendary status by doubling its high-resolution support up to 768kHz, DSD512, and MQA decoding capabilities.<br /><br />The USB-C connectivity streamlines cable management and provides USB input overvoltage protection, safeguarding it against potential harm. Moreover, a significant reduction in DC offset minimises audio clicks when adjusting settings. These improvements propel the ZEN DAC 3 to new heights of audio excellence.<br /><br /><h2>Powering Your Headphones</h2><br /><br />The ZEN DAC 3 goes beyond being just a USB DAC, boasting a built-in headphone amplifier equipped with both balanced 4.4mm and SE 6.3mm headphone outputs. With its high-performance 390mW headphone output power, you can use it with a broad range of headphones. XBass+ is a switchable pure analogue signal processing mode designed to enhance the bass without compromising the clarity of the mid-range. It is perfect for use with IEMs or open-back headphones, which may lack bass response. The amplifier stage includes a switchable gain feature called PowerMatch, which provides a gain boost for more demanding headphones.If you have headphones that demand even more power, you can connect the ZEN DAC 3 to the ZEN CAN headphone amplifier using a 4.4mm to 4.4mm balanced cable, stacking them up as a ZEN system.<br /><br /><h2>DACtivate your speakers and amplifier.</h2><br /><br />The ZEN DAC 3 features a Variable or Fixed output switch.<br /><br />In Variable mode, adjust volume using the knob when connecting directly to active speakers via our 4.4mm to XLR cable or RCA cables.<br /><br />Use Fixed mode for connecting line outputs to a receiver or main amplifier.<br /><br />The ZEN DAC 3 is the most versatile USB DAC in its class, offering multiple usage options.",
+      "imageSrc": "https://ifi-audio.com/wp-content/uploads/2024/04/Zen-Dac-3-header-fi-1024x498_2.webp",
       "discount": 0
     },
     {
       "id": 10,
-      "name": "Product 10",
-      "price": 150,
-      "description": "Description for Product 10",
-      "discount": 0
+      "name": "Sony WH-1000XM5",
+      "price": 398,
+      "description": "<h2>YOUR WORLD. NOTHING ELSE.</h2><br /><br />With two processors controlling eight microphones, Auto NC Optimizer for automatically optimizing noise canceling based on your wearing conditions and environment, and a specially designed driver unit, WH-1000XM5 headphones with industry-leading noise canceling1 rewrite the rules for distraction-free listening and call clarity.",
+      "imageSrc": "https://store.sony.com.au/dw/image/v2/ABBC_PRD/on/demandware.static/-/Sites-sony-master-catalog/default/dw2e089ba5/images/WH1000XM5S/WH1000XM5S.png?sw=442&sh=442&sm=fit",
+      "discount": 15
     }
   ]
 }

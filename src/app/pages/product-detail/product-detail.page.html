@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons><ion-icon name="arrow-back-outline" size="large" (click)="navigateToProducts()"></ion-icon></ion-buttons>
     
-    <ion-title>Product Detail</ion-title>
+    <ion-title>{{productDetailConstants.TITLE_TEXT}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,19 +11,19 @@
     <ion-card-header>
       <ion-card-title>{{ product.name }}</ion-card-title>
     </ion-card-header>
-    <ion-card-content>
-      <img [src]="product.imageSrc ? product.imageSrc : environment.defaultImage" alt="Product Image" />
+    <ion-card-content class="ion-text-center">
+      <img class="product-image" [src]="product.imageSrc ? product.imageSrc : environment.defaultImage" alt="Product Image" />
       <br /> <br />
-      <p>{{ product.description }}</p>
+      <p [innerHTML]="product.description"></p>
       <br />
       <p *ngIf="product.discount > 0">
-        Discounted Price: {{ calculateDiscountedPrice(product) | currency }}
-      </p>
-      <p *ngIf="product.discount === 0">
-        Price: {{ product.price | currency }}
+        {{productDetailConstants.DISCOUNTED_PRICE}}{{ calculateDiscountedPrice(product) | currency }}
       </p>
       <p *ngIf="product.discount > 0">
-        Original Price: <span class="original-price">{{ product.price | currency }}</span>
+        {{productDetailConstants.ORIGINAL_PRICE}}<span class="original-price">{{ product.price | currency }}</span>
+      </p>
+      <p *ngIf="product.discount === 0">
+        {{productDetailConstants.PRICE}}{{ product.price | currency }}
       </p>
     </ion-card-content>
   </ion-card>

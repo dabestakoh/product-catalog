@@ -8,7 +8,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Product Catalog</ion-title>
+      <ion-title size="large">{{productsTabConstants.TITLE_TEXT}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -19,8 +19,28 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-  <ion-searchbar *ngIf="!isLoading && !error" [(ngModel)]="searchInput" (ionInput)="filterProducts()"></ion-searchbar>
+
+  <ion-grid *ngIf="!isLoading && !error" class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-searchbar [(ngModel)]="searchInput" (ionInput)="filterProducts()"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-select label="Sort by" placeholder="Choose" [(ngModel)]="sortOrder" (ionChange)="sortProducts()"
+            interface="popover">
+            <ion-select-option [value]="productSortType.PRICEASC">{{productsTabConstants.SORT_PRICEASC}}</ion-select-option>
+            <ion-select-option [value]="productSortType.PRICEDESC">{{productsTabConstants.SORT_PRICEDESC}}</ion-select-option>
+            <ion-select-option [value]="productSortType.NAMEASC">{{productsTabConstants.NAME_PRICEASC}}</ion-select-option>
+            <ion-select-option [value]="productSortType.NAMEDESC">{{productsTabConstants.NAME_PRICEDESC}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <ion-grid>
     <ion-row *ngIf="products.length">
       <ion-col class="ion-text-center" size-xs="6" size-sm="6" size-md="4" size-lg="4" size-xl="2"
@@ -35,25 +55,25 @@
           <ion-card-content>
             <span class="product-name">{{ product.name }}</span>
             <ng-container *ngIf="product.discount > 0">
-                <span class="original-price">{{ product.price | currency }}  </span>
-                <span class="discounted-price">{{ calculateDiscountedPrice(product) | currency }}</span>
+              <span class="original-price">{{ product.price | currency }} </span>
+              <span class="discounted-price">{{ calculateDiscountedPrice(product) | currency }}</span>
             </ng-container>
             <ng-container *ngIf="product.discount === 0">
-              <span class="price">{{ product.price | currency }}  </span>
+              <span class="price">{{ product.price | currency }} </span>
             </ng-container>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col *ngIf="!filteredProducts.length && !error" class="ion-text-center">
         <div>
-          No results found based on your search.
+          {{productsTabConstants.NO_SEARCH_RESULTS}}
         </div>
       </ion-col>
     </ion-row>
     <ion-row *ngIf="!products.length && !isLoading && !error">
       <ion-col class="ion-text-center">
         <div>
-          No products available.
+          {{productsTabConstants.NO_PRODUCTS_AVAIL}}
         </div>
       </ion-col>
     </ion-row>

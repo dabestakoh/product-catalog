@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductsTabConstants } from 'src/app/constants/products-tab-constants';
+import { ProductSortType } from 'src/app/enums/product-sort-type.enum';
 import { Product } from 'src/app/interfaces/product';
 import { ProductService } from 'src/app/services/product.service';
-import { environment as env }  from 'src/environments/environment';
+import { PriceUtil } from 'src/app/utils/price-util';
+import { environment as env } from 'src/environments/environment';
 @Component({
   selector: 'app-products-tab',
   templateUrl: './products-tab.page.html',
@@ -15,8 +18,14 @@ export class ProductsTabPage implements OnInit {
   error: string | null = null;
   environment = env;
   isLoading: boolean = true;
+  sortOrder: string = 'asc';
+  productsTabConstants = ProductsTabConstants;
+  productSortType = ProductSortType;
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private priceUtil: PriceUtil) { }
 
   ngOnInit() {
     this.getProducts();
@@ -26,11 +35,11 @@ export class ProductsTabPage implements OnInit {
     this.productService.getProducts().subscribe(
       (products: Product[]) => {
         this.filteredProducts = this.products = products;
+        // this.sortProducts();
         this.isLoading = false;
       },
       (error: any) => {
-        console.error('Error fetching from products API:', error);
-        this.error = 'Something went wrong. Please try again later.';
+        this.error = this.productsTabConstants.API_ERROR;
         this.isLoading = false;
       }
     );
@@ -44,14 +53,30 @@ export class ProductsTabPage implements OnInit {
     );
   }
 
-  calculateDiscountedPrice(product: Product): number {
-    if (product.discount > 0) {
-      return product.price - (product.price * (product.discount / 100));
+  sortProducts() {
+    switch (this.sortOrder) {
+      case this.productSortType.PRICEASC:
+        this.filteredProducts.sort((a, b) => a.price - b.price);
+        break;
+      case this.productSortType.PRICEDESC:
+        this.filteredProducts.sort((a, b) => b.price - a.price);
+        break;
+      case this.productSortType.NAMEASC:
+        this.filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case this.productSortType.NAMEDESC:
+        this.filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      default:
+        break;
     }
-    return product.price;
   }
 
-  viewProductDetail(product: Product){
+  calculateDiscountedPrice(product: Product): number {
+    return this.priceUtil.calculateDiscountedPrice(product);
+  }
+
+  viewProductDetail(product: Product) {
     this.router.navigate(['/product-detail'], { state: { product } });
   }
 }

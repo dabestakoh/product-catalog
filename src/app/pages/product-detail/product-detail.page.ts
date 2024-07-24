@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { ProductDetailConstants } from 'src/app/constants/product-detail.constants';
+import { AppRoutes } from 'src/app/enums/app-routes.enum';
+import { AppState } from 'src/app/enums/app-state';
 import { Product } from 'src/app/interfaces/product';
+import { PriceUtil } from 'src/app/utils/price-util';
 import { environment as env } from 'src/environments/environment';
 
 @Component({
@@ -12,27 +16,27 @@ import { environment as env } from 'src/environments/environment';
 export class ProductDetailPage implements OnInit {
   product: Product | undefined;
   environment = env;
+  productDetailConstants = ProductDetailConstants;
+
   constructor(
     private router: Router,
-    private navCtrl: NavController) { }
+    private navCtrl: NavController,
+    private priceUtil: PriceUtil) { }
 
   ngOnInit() {
     const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state && navigation.extras.state['product']) {
-      this.product = navigation.extras.state['product'];
+    if (navigation?.extras.state && navigation.extras.state[AppState.PRODUCT]) {
+      this.product = navigation.extras.state[AppState.PRODUCT];
     } else {
-      this.router.navigate(['/products']);
+      this.router.navigate([AppRoutes.PRODUCTS]);
     }
   }
 
   calculateDiscountedPrice(product: Product): number {
-    if (product.discount > 0) {
-      return product.price - (product.price * (product.discount / 100));
-    }
-    return product.price;
+    return this.priceUtil.calculateDiscountedPrice(product);
   }
 
   navigateToProducts() {
-    this.navCtrl.navigateBack('tabs/products')
+    this.navCtrl.navigateBack(AppRoutes.PRODUCTS);
   }
 }
