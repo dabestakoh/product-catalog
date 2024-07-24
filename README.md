@@ -16,10 +16,13 @@ This is a simple product catalog page that displays a product list and displays 
 ## Screenshots
 
 1. Home Page
-![Home Page](assets/screenshots/home-page.jpg)
+
+![Home Page](https://github.com/dabestakoh/product-catalog/raw/master/src/assets/screenshots/home-page.jpg)
 
 2. Products Page
-![Home Page](assets/screenshots/products-page.jpg)
+
+![Home Page](https://github.com/dabestakoh/product-catalog/raw/master/src/assets/screenshots/products-page.jpg)
 
 3. Product Detail Page
-![Home Page](assets/screenshots/product-detail-page.jpg)
+
+![Home Page](https://github.com/dabestakoh/product-catalog/raw/master/src/assets/screenshots/product-detail-page.jpg)
