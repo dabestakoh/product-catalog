@@ -18,7 +18,7 @@ export class ProductsTabPage implements OnInit {
   error: string | null = null;
   environment = env;
   isLoading: boolean = true;
-  sortOrder: string = 'asc';
+  sortOrder: string = ProductSortType.PRICEASC;
   productsTabConstants = ProductsTabConstants;
   productSortType = ProductSortType;
 
@@ -35,7 +35,6 @@ export class ProductsTabPage implements OnInit {
     this.productService.getProducts().subscribe(
       (products: Product[]) => {
         this.filteredProducts = this.products = products;
-        // this.sortProducts();
         this.isLoading = false;
       },
       (error: any) => {
